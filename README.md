@@ -1,6 +1,6 @@
-# crt.cr
+# crt.cr [![Build Status](https://travis-ci.org/maiha/crt.cr.svg?branch=travis)](https://travis-ci.org/maiha/crt.cr)
 
-Bindings and crystal class for libncursesw
+Bindings for libncursesw and crt class
 
 ## Installation
 
@@ -19,6 +19,12 @@ dependencies:
 
 ```crystal
 require "crt"
+
+win = Crt::Window.new(24, 80)
+win.clear
+win.puts(5, 10, "hello world")
+win.refresh
+Crt.done
 ```
 
 
