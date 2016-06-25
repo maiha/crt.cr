@@ -27,6 +27,10 @@ win.refresh
 Crt.done
 ```
 
+## Supported C Functions
+
+- see: https://github.com/maiha/crt.cr/blob/master/src/libncursesw.cr
+
 
 ## Development
 
@@ -34,6 +38,7 @@ Crt.done
 
 ```shell
 apt-get install libncursesw5-dev
+apt-get install libgpm-dev        # needs only for static link
 ```
 
 ## Contributing
