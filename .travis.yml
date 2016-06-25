@@ -4,5 +4,9 @@ crystal:
 addons:
   apt:
     packages:
-    - libgmp-dev
+    - libgpm-dev
     - libncursesw5-dev
+script:
+  - make spec
+  - make compile
+  - make static
