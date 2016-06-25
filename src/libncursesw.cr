@@ -28,6 +28,10 @@ lib LibNcursesw
   type WindowPtr = Void*
 
   fun initscr : WindowPtr
+  fun getmaxx(win : WindowPtr) : Int32
+  fun getmaxy(win : WindowPtr) : Int32
+  fun nodelay(win : WindowPtr, b : Bool) : Int32
+  fun cbreak : Int32
   fun noecho : Int32
   fun halfdelay(v : Int32) : Int32
   fun nonl : Int32

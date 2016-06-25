@@ -1,7 +1,7 @@
 # coding: utf-8
 module Crt
   class Window
-    def initialize(r = 24, c = 80, x = 0, y = 0)
+    def initialize(r = 24, c = 80, x = Crt.x, y = Crt.y)
       Crt.init
       @winp = LibNcursesw.newwin(r, c, x, y)
     end

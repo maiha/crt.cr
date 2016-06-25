@@ -6,6 +6,13 @@ describe Crt do
     win.clear
     win.puts("hello world")
     win.refresh
-    Crt.done
+  end
+
+  it ".x" do
+    (Crt.x > 0).should be_true
+  end
+
+  it ".y" do
+    (Crt.y > 0).should be_true
   end
 end
