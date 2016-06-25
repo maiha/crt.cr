@@ -5,8 +5,7 @@ module Crt
   
   def self.stdscr : LibNcursesw::WindowPtr
     unless @@initialized
-      return LibNcursesw.initscr
-#      raise "Crt is not initialized yet"
+      raise "Crt is not initialized yet"
     end
     return @@stdscr.not_nil!
   end
@@ -39,11 +38,11 @@ module Crt
   end
 
   def self.x
-    LibNcursesw.getmaxx(LibNcursesw.initscr)
+    LibNcursesw.getmaxx(stdscr)
   end
 
   def self.y
-    LibNcursesw.getmaxy(LibNcursesw.initscr)
+    LibNcursesw.getmaxy(stdscr)
   end
 end
 

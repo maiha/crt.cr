@@ -1,9 +1,11 @@
 # coding: utf-8
 module Crt
   class Window
-    def initialize(r = 24, c = 80, x = Crt.x, y = Crt.y)
+    def initialize(r = -1, c = -1, y = 0, x = 0)
       Crt.init
-      @winp = LibNcursesw.newwin(r, c, x, y)
+      r = Crt.y if r < 0
+      c = Crt.x if c < 0
+      @winp = LibNcursesw.newwin(r, c, y, x)
     end
 
     def print(y : Int32, x : Int32, str : String)

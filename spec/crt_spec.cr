@@ -1,6 +1,8 @@
 require "./spec_helper"
 
 describe Crt do
+  Crt.init
+
   it "hello world" do
     win = Crt::Window.new(24, 80)
     win.clear
