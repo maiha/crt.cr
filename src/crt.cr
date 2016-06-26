@@ -37,6 +37,22 @@ module Crt
     end
   end
 
+  # change input mode to `cooked`
+  def self.cooked
+    LibNcursesw.nobreak
+    LibNcursesw.noraw
+  end
+
+  # change input mode to `cbreak`
+  def self.cbreak
+    LibNcursesw.cbreak
+  end
+
+  # change input mode to `raw`
+  def self.cbreak
+    LibNcursesw.raw
+  end
+
   def self.x
     LibNcursesw.getmaxx(stdscr)
   end

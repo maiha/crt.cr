@@ -28,6 +28,10 @@ module Crt
       LibNcursesw.wmove(@winp, y, x)
     end
 
+    def getch
+      LibNcursesw.getch
+    end
+
     def clear
       LibNcursesw.wclear(@winp)
     end
