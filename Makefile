@@ -6,14 +6,17 @@ PROGS = $(SRCS:examples/%.cr=%)
 .PHONY : all static compile clean bin hello spec
 .PHONY : ${PROGS}
 
-all: static
+all: build
 
-static: bin ${PROGS}
+build: bin ${PROGS}
 
 bin:
 	@mkdir -p bin
 
 hello: examples/hello.cr
+	crystal compile --release $^ -o bin/$@
+
+hello-static: examples/hello.cr
 	crystal compile --release $^ -o bin/$@ ${LINK_FLAGS}
 
 spec:
