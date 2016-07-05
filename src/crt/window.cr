@@ -12,6 +12,10 @@ module Crt
       @col = c
     end
 
+    def use_default_colors
+      LibNcursesw.use_default_colors
+    end
+
     def print(y : Int32, x : Int32, str : String)
       LibNcursesw.mvwaddstr(@winp, y, x, str)
     end
@@ -24,6 +28,10 @@ module Crt
       LibNcursesw.waddstr(@winp, str + "\n")
     end
 
+    def start_color
+      LibNcursesw.start_color
+    end
+
     def move(y : Int32, x : Int32)
       LibNcursesw.wmove(@winp, y, x)
     end
@@ -31,7 +39,15 @@ module Crt
     def getch
       LibNcursesw.getch
     end
+    
+    def mouseinterval(v : Int32)
+      LibNcursesw.mouseinterval(v)
+    end
 
+    def move(y : Int32, x : Int32)
+      LibNcursesw.wmove(@winp, y, x)
+    end
+    
     def clear
       LibNcursesw.wclear(@winp)
     end
