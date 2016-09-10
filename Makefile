@@ -3,10 +3,14 @@ LINK_FLAGS = --link-flags "-static"
 SRCS = ${wildcard examples/*.cr}
 PROGS = $(SRCS:examples/%.cr=%)
 
-.PHONY : all static compile clean bin hello spec
+.PHONY : all static examples clean bin hello hello-static spec test
 .PHONY : ${PROGS}
 
 all: build
+
+test: all examples static spec
+
+static: hello-static
 
 build: bin ${PROGS}
 
@@ -14,17 +18,17 @@ bin:
 	@mkdir -p bin
 
 hello: examples/hello.cr
-	crystal compile --release $^ -o bin/$@
+	crystal build --release $^ -o bin/$@
 
 hello-static: examples/hello.cr
-	crystal compile --release $^ -o bin/$@ ${LINK_FLAGS}
+	crystal build --release $^ -o bin/$@ ${LINK_FLAGS}
 
 spec:
 	crystal spec -v
 
-compile:
+examples:
 	@for x in examples/*.cr ; do\
-	  crystal compile "$$x" -o /dev/null ;\
+	  crystal build "$$x" -o /dev/null ;\
 	done
 
 clean:
