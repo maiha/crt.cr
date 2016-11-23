@@ -1,11 +1,11 @@
 # We switch library to use UTF-8 on ubuntu that uses ncursesw for wide-chars
-ifdef linux
+{% if flag?(:linux) %}
   # We don't need gpm, but ncursesw(ubuntu) uses it for static link
   @[Link("gpm")]
   @[Link("ncursesw")]
-else
+{% else %}
   @[Link("ncurses")]
-end
+{% end %}
 
 lib LibC
   fun setlocale(cat : Int32, locale : LibC::Char*) : LibC::Char*
