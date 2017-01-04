@@ -49,7 +49,7 @@ module Crt
   end
 
   # change input mode to `raw`
-  def self.cbreak
+  def self.raw
     LibNcursesw.raw
   end
 
