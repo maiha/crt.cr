@@ -54,6 +54,7 @@ lib LibNcursesw
   fun start_color : Int32
   fun use_default_colors : Int32
   fun waddstr(win : WindowPtr, str : LibC::Char*) : Int32
+  fun wborder(win : WindowPtr, ls : Int32, rs : Int32, ts : Int32, bs : Int32, tl : Int32, tr : Int32, bl : Int32, br : Int32) : Int32
   fun wclear(win : WindowPtr) : Int32
   fun wmove(win : WindowPtr, y : Int32, x : Int32) : Int32
   fun wrefresh(win : WindowPtr) : Int32
