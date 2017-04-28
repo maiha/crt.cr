@@ -38,6 +38,7 @@ lib LibNcursesw
   fun getnstr(str : LibC::Char*, n : Int32) : Int32
   fun getstr(str : LibC::Char*) : Int32
   fun halfdelay(v : Int32) : Int32
+  fun has_colors : Bool
   fun initscr : WindowPtr
   fun intrflush(win : WindowPtr, bool : Bool) : Int32
   fun keypad(win : WindowPtr, bool : Bool) : Int32
