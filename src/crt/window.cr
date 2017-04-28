@@ -56,5 +56,17 @@ module Crt
       LibNcursesw.refresh
       LibNcursesw.wrefresh(@winp)
     end
+
+    def border(ls = '│', rs = '│', ts = '─', bs = '─', tl = '┌', tr = '┐', bl = '└', br = '┘')
+      LibNcursesw.wborder(@winp,
+              Crt.chr_to_int_ACS(ls),
+              Crt.chr_to_int_ACS(rs),
+              Crt.chr_to_int_ACS(ts),
+              Crt.chr_to_int_ACS(bs),
+              Crt.chr_to_int_ACS(tl),
+              Crt.chr_to_int_ACS(tr),
+              Crt.chr_to_int_ACS(bl),
+              Crt.chr_to_int_ACS(br))
+    end
   end
 end
