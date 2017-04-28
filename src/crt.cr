@@ -15,6 +15,9 @@ module Crt
     return if @@initialized
 
     LibC.setlocale(LibNcursesw::LC_ALL, "")
+	if(LibNcursesw.has_colors) # This causes the error
+		LibNcursesw.start_color
+	end
     
     @@stdscr = LibNcursesw.initscr
     @@initialized = true
