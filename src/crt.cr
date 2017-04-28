@@ -60,6 +60,25 @@ module Crt
   def self.y
     LibNcursesw.getmaxy(stdscr)
   end
+
+  def self.chr_to_int_ACS(c : Char)
+    case c
+    when '┌' # ACS_ULCORNER
+      return 4194412
+    when '└' # ACS_LLCORNER
+      return 4194413
+    when '┐' # ACS_URCORNER
+      return 4194411
+    when '┘' # ACS_LRCORNER
+      return 4194410
+    when '─' # ACS_HLINE
+      return 4194417
+    when '│' # ACS_VLINE
+      return 4194424
+    else # TODO Add the rest of the ACS chars
+      return c.ord
+	end
+  end
 end
 
 require "./crt/**"
