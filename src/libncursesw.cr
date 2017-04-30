@@ -28,6 +28,7 @@ lib LibNcursesw
   type WindowPtr = Void*
 
   fun cbreak : Int32
+  fun color_pair = COLOR_PAIR(slot : Int16) : Int32
   fun curs_set(v : Int32) : Int32
   fun echo : Int32
   fun endwin : Int32
@@ -39,6 +40,8 @@ lib LibNcursesw
   fun getstr(str : LibC::Char*) : Int32
   fun halfdelay(v : Int32) : Int32
   fun has_colors : Bool
+  fun init_color(color : Int16, r : Int16, g : Int16, b : Int16)
+  fun init_pair(slot : Int16, foreground : Int16, background : Int16)
   fun initscr : WindowPtr
   fun intrflush(win : WindowPtr, bool : Bool) : Int32
   fun keypad(win : WindowPtr, bool : Bool) : Int32
@@ -55,6 +58,9 @@ lib LibNcursesw
   fun start_color : Int32
   fun use_default_colors : Int32
   fun waddstr(win : WindowPtr, str : LibC::Char*) : Int32
+  fun wattroff(win : WindowPtr, attr : Int32) : Int32
+  fun wattron(win : WindowPtr, attr : Int32) : Int32
+  fun wbkgd(win : WindowPtr, pair : Int32) : Int32
   fun wborder(win : WindowPtr, ls : Int32, rs : Int32, ts : Int32, bs : Int32, tl : Int32, tr : Int32, bl : Int32, br : Int32) : Int32
   fun wclear(win : WindowPtr) : Int32
   fun wmove(win : WindowPtr, y : Int32, x : Int32) : Int32
