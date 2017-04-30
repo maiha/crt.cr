@@ -16,6 +16,18 @@ module Crt
       LibNcursesw.use_default_colors
     end
 
+	def attribute_on(attr : (ColorPair | Attribute))
+		LibNcursesw.wattron(@winp, attr.value)
+	end
+
+	def attribute_off(attr : (ColorPair | Attribute))
+		LibNcursesw.wattroff(@winp, attr.value)
+	end
+
+	def set_background(pair : ColorPair)
+		LibNcursesw.wbkgd(@winp, pair.value)
+	end
+
     def print(y : Int32, x : Int32, str : String)
       LibNcursesw.mvwaddstr(@winp, y, x, str)
     end

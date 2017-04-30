@@ -2,6 +2,7 @@ require "./libncursesw"
 
 module Crt
   @@initialized = false
+  @@colors_on = false
   
   def self.stdscr : LibNcursesw::WindowPtr
     unless @@initialized
@@ -10,14 +11,10 @@ module Crt
     return @@stdscr.not_nil!
   end
 
-  # TODO: color
   def self.init
     return if @@initialized
 
     LibC.setlocale(LibNcursesw::LC_ALL, "")
-	if(LibNcursesw.has_colors) # This causes the error
-		LibNcursesw.start_color
-	end
     
     @@stdscr = LibNcursesw.initscr
     @@initialized = true
@@ -38,6 +35,21 @@ module Crt
       LibNcursesw.endwin
       @@initialized = false
     end
+  end
+
+  def self.start_color
+	result = LibNcursesw.start_color
+	unless result == -1
+		@@colors_on = true
+		LibNcursesw.use_default_colors
+	end
+  end
+
+  def self.init_color(color : Color, r : Int, g : Int, b : Int)
+		(r * 1000 / 255).clamp(0..1000)
+		(g * 1000 / 255).clamp(0..1000)
+		(b * 1000 / 255).clamp(0..1000)
+		LibNcursesw.init_color(color.value, r, g, b)
   end
 
   # change input mode to `cooked`
@@ -121,6 +133,33 @@ module Crt
     else
       return c.ord
     end
+  end
+  
+  # TODO Figure out how to support 256 colors
+  enum Color
+	  Default = -1
+	  Black = 0
+	  Red = 1
+	  Green = 2
+  	  Yellow = 3
+	  Blue = 4
+	  Magenta = 5
+	  Cyan = 6
+	  White = 7
+  end
+
+  # TODO Make sure these are the same across multiple systems/terminals
+  enum Attribute
+	Normal = 0
+	Altcharset = 4194304
+	Blink = 524288
+	Bold = 2097152
+	Dim = 1048576
+	Invis = 8388608
+	Protect = 16777216
+	Reverse = 262144
+	Standout = 65536
+	Underline = 131072
   end
 end
 
