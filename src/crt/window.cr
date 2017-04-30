@@ -68,5 +68,13 @@ module Crt
               Crt.chr_to_int_ACS(bl),
               Crt.chr_to_int_ACS(br))
     end
+
+	def mvvline(y : Int32, x : Int32, ch = '│', n = @row)
+		LibNcursesw.mvwvline(@winp, y, x, Crt.chr_to_int_ACS(ch), n)
+	end
+
+	def mvhline(y : Int32, x : Int32, ch = '─', n = @col)
+		LibNcursesw.mvwhline(@winp, y, x, Crt.chr_to_int_ACS(ch), n)
+	end
   end
 end
