@@ -1,16 +1,16 @@
 require "../src/crt"
 
-#Startup
+# Startup
 Crt.init
 Crt.start_color
 
-#Set up colors
+# Set up colors
 red = Crt::ColorPair.new(Crt::Color::Red, Crt::Color::Default)
 blue = Crt::ColorPair.new(Crt::Color::Blue, Crt::Color::Default)
-Crt.init_color(Crt::Color::Magenta, 75, 0 ,130)
+Crt.init_color(Crt::Color::Magenta, 75, 0, 130)
 custom = Crt::ColorPair.new(Crt::Color::Magenta, Crt::Color::Default)
 
-#Put stuff on the screen
+# Put stuff on the screen
 win = Crt::Window.new
 win.attribute_on red
 win.print(3, 3, "I'm red!")
