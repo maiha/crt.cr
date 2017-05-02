@@ -2,7 +2,7 @@
 
 Bindings for libncursesw and crt class
 
-- crystal: 0.20.4
+- crystal: 0.22.0
 
 ## Installation
 
@@ -13,7 +13,7 @@ Add this to your application's `shard.yml`:
 dependencies:
   crt:
     github: maiha/crt.cr
-    version: 0.1.2
+    version: 0.3.0
 ```
 
 ## Usage
@@ -28,6 +28,8 @@ win.print(5, 10, "hello world")
 win.refresh
 Crt.done
 ```
+
+See [./examples/](./examples/) for more usages.
 
 ## Supported C Functions
 
