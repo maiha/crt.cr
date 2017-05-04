@@ -17,4 +17,19 @@ describe Crt do
   it ".y" do
     (Crt.y > 0).should be_true
   end
+
+  # just compile for avoiding dead codes
+  describe "(modes)" do
+    it "cbreak" do
+      Crt.cbreak
+    end
+
+    it "raw" do
+      Crt.raw
+    end
+
+    it "cooked" do
+      Crt.cooked
+    end
+  end
 end

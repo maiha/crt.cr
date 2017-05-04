@@ -53,7 +53,7 @@ module Crt
 
   # change input mode to `cooked`
   def self.cooked
-    LibNcursesw.nobreak
+    LibNcursesw.nocbreak
     LibNcursesw.noraw
   end
 
