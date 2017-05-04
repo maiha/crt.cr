@@ -55,6 +55,7 @@ lib LibNcursesw
   fun noecho : Int32
   fun nonl : Int32
   fun noraw : Int32
+  fun notimeout(win : WindowPtr, b : Bool) : Int32
   fun raw : Int32
   fun refresh : Int32
   fun start_color : Int32

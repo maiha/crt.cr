@@ -67,6 +67,10 @@ module Crt
     LibNcursesw.raw
   end
 
+  def self.notimeout(b : Bool)
+    LibNcursesw.notimeout(stdscr, b)
+  end
+
   def self.x
     LibNcursesw.getmaxx(stdscr)
   end
