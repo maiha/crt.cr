@@ -8,7 +8,7 @@ PROGS = $(SRCS:examples/%.cr=%)
 
 all: build
 
-test: check_version_mismatch build examples static spec
+test: check_version_mismatch build examples spec
 
 static: hello-static
 
