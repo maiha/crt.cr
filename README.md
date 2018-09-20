@@ -1,4 +1,4 @@
-# crt.cr [![Build Status](https://travis-ci.org/maiha/crt.cr.svg?branch=travis)](https://travis-ci.org/maiha/crt.cr)
+# crt.cr [![Build Status](https://travis-ci.org/maiha/crt.cr.svg?branch=master)](https://travis-ci.org/maiha/crt.cr)
 
 Bindings for libncursesw and crt class
 
