@@ -18,10 +18,10 @@ bin:
 	@mkdir -p bin
 
 hello: examples/hello.cr
-	crystal build --release $^ -o bin/$@
+	crystal build $^ -o bin/$@
 
 hello-static: examples/hello.cr
-	crystal build --release $^ -o bin/$@ ${LINK_FLAGS}
+	crystal build $^ -o bin/$@ ${LINK_FLAGS}
 
 spec:
 	crystal spec -v

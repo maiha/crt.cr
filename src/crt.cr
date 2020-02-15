@@ -24,8 +24,6 @@ module Crt
     LibNcursesw.intrflush(stdscr, false)
     LibNcursesw.keypad(stdscr, true)
     LibNcursesw.curs_set(0)
-
-    at_exit { Crt.done }
   end
 
   def self.done
@@ -167,3 +165,6 @@ module Crt
 end
 
 require "./crt/**"
+
+# Not sure whether `at_exit` should be here
+at_exit { Crt.done }

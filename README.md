@@ -2,7 +2,7 @@
 
 Bindings for libncursesw and crt class
 
-- crystal: 0.26.1
+- crystal: 0.32.1
 
 ## Installation
 
