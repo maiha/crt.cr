@@ -54,10 +54,6 @@ module Crt
       LibNcursesw.mouseinterval(v)
     end
 
-    def move(y : Int32, x : Int32)
-      LibNcursesw.wmove(@winp, y, x)
-    end
-
     def clear
       LibNcursesw.wclear(@winp)
     end
