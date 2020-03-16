@@ -46,6 +46,10 @@ module Crt
       LibNcursesw.wmove(@winp, y, x)
     end
 
+    def mvwin(y : Int32, x : Int32)
+      LibNcursesw.mvwin(@winp, y, x)
+    end
+
     def getch
       LibNcursesw.getch
     end

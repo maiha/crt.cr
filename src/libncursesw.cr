@@ -50,6 +50,7 @@ lib LibNcursesw
   fun mvwhline(win : WindowPtr, y : Int32, x : Int32, ch : Int32, n : Int32)
   fun mvwvline(win : WindowPtr, y : Int32, x : Int32, ch : Int32, n : Int32)
   fun newwin(rows : Int32, cols : Int32, y : Int32, x : Int32) : WindowPtr
+  fun mvwin(win : WindowPtr, y : Int32, x : Int32)
   fun nocbreak : Int32
   fun nodelay(win : WindowPtr, b : Bool) : Int32
   fun noecho : Int32
