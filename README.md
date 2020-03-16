@@ -2,7 +2,7 @@
 
 Bindings for libncursesw and crt class
 
-- crystal: 0.32.1
+- crystal: 0.27.2 0.31.1 0.32.1 0.33.0
 
 ## Installation
 
@@ -13,7 +13,7 @@ Add this to your application's `shard.yml`:
 dependencies:
   crt:
     github: maiha/crt.cr
-    version: 0.4.1
+    version: 0.4.2
 ```
 
 ## Usage
