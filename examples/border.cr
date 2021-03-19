@@ -1,14 +1,18 @@
 require "../src/crt"
 
 Crt.init
+
 x = Crt.x
 y = Crt.y
-tlwin = Crt::Window.new(y // 2, x // 2)
-brwin = Crt::Window.new(y // 2, x // 2, y // 2, x // 2)
-tlwin.border
-brwin.border('l', 'l', '-', '-', '+', '+', '+', '+')
-brwin.refresh
-tlwin.refresh
-loop do
-end
+
+tl_window = Crt::Window.new(y // 2, x // 2)
+tl_window.border
+
+br_window = Crt::Window.new(y // 2, x // 2, y // 2, x // 2)
+br_window.border('|', '|', '-', '-', '+', '+', '+', '+')
+
+[tl_window, br_window].each &.refresh
+
+sleep 10.seconds
+
 Crt.done
